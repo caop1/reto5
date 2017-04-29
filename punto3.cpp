@@ -34,7 +34,7 @@ using namespace std;
 
 
 
-void recolectarDatos(string ** & datos){
+void recolectarDatos(string ** & datos){ //se crea la matriz bidimensional para guardar los nombbres y apellidos de las personas
     for(int i=0; i<3; i++){
         datos[i]= new string [2];
 }
@@ -44,7 +44,9 @@ string nombre;
 string apellido;
 
 
-    for(int i=0; i<3; i++){
+    for(int i=0; i<3; i++){//se recorre la matriz y se le va asignando a cada posición el nombre y apellido
+							//se define la posición 0 y 1 de la columna para que siempre 
+							//en la columna 0 guarde los nombres y en la 1 los apellidos
         cout << "Ingrese un nombre" << endl;
         cin >> nombre;
         datos[i][0] = nombre;
@@ -53,7 +55,9 @@ string apellido;
         datos[i][1]  = apellido;
     }
 }
-void recolectarSalariosPersona(double * & salarios, string ** & datos){
+void recolectarSalariosPersona(double * & salarios, string ** & datos){ //se le pide al usuario ingresar el salario que corresponde
+	//a la persona que se le muestra en pantalla. Para eso se le muestra la matriz en la posición i con colunma 0
+	//para el nombre y 1 para el apellido.
 
     for (int i=0; i<3; i++){
        cout << "Ingrese el salario de la persona" << datos[i][0] << " " << datos[i][1] << endl;
@@ -61,7 +65,7 @@ void recolectarSalariosPersona(double * & salarios, string ** & datos){
     }
 }
 
-void imprimirResultados(double * & salarios, string ** & datos){
+void imprimirResultados(double * & salarios, string ** & datos){ //Imprime el nombre, apellido y salario de una de las personas
 
     for (int i=0; i<3; i++){
        cout << "La persona" << datos[i][0] << " " << datos[i][1] << "devenga" <<salarios[i]<< endl;
@@ -70,7 +74,7 @@ void imprimirResultados(double * & salarios, string ** & datos){
 
 
 
-int main(){
+int main(){//Se inicializan los arreglos y se llaman las funciones
   string ** arrayDatosPersona = new string * [3];
   double * salariosPersona = new double[3];
   
